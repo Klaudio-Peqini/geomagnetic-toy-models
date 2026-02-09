@@ -54,3 +54,15 @@ Each model family lives in its own subdirectory under `models/`, with local docu
 
 ## Repository Structure
 
+geomagnetic-toy-models/
+│
+├── models/ # Individual toy models and formulations
+├── diagnostics/ # Common diagnostics (dipole moment, reversals, spectra)
+├── notebooks/ # Exploratory and pedagogical Jupyter notebooks
+├── experiments/ # Parameter scans, scaling tests, sensitivity studies
+├── data/ # Paleomagnetic or synthetic data (lightweight)
+├── docs/ # Conceptual and theoretical documentation
+├── utils/ # Numerical and plotting utilities
+├── tests/ # Basic correctness and regression tests
+└── environment/ # Reproducible Python environments
+
