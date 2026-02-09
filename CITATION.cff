@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software in academic work, please cite it."
+title: "Geomagnetic Toy Models: Low-Dimensional and Stochastic Models of the Geodynamo"
+version: 0.1.0
+date-released: 2026-02-10
+license: MIT
+
+authors:
+  - family-names: Peqini
+    given-names: Klaudio
+    affiliation: Department of Physics
+    orcid: https://orcid.org/0000-0002-8516-7381
+
+repository-code: "https://github.com/Klaudio-Peqini/geomagnetic-toy-models"
+keywords:
+  - geomagnetism
+  - geodynamo
+  - toy models
+  - stochastic dynamics
+  - dynamical systems
+  - geomagnetic reversals
+  - low-dimensional models
+  - paleomagnetism
+
+abstract: >
+  This repository provides a collection of low-dimensional, conceptual,
+  and stochastic toy models designed to investigate the long-term dynamics
+  of the Earth's magnetic field. The models focus on geomagnetic reversals,
+  excursions, bistability, and noise-driven transitions, and are intended
+  as interpretable complements to full 3D geodynamo simulations.
+
+preferred-citation:
+  type: software
+  authors:
+    - family-names: Peqini
+      given-names: Klaudio
+  title: "Geomagnetic Toy Models"
+  year: 2026
+  url: "https://github.com/Klaudio-Peqini/geomagnetic-toy-models"
