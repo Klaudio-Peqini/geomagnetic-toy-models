@@ -1,0 +1,33 @@
+cat << 'EOF' > .gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Data (keep raw data out of git)
+data/paleomagnetic/*
+data/synthetic/*
+!data/paleomagnetic/.gitkeep
+!data/synthetic/.gitkeep
+EOF
+
+touch data/paleomagnetic/.gitkeep
+touch data/synthetic/.gitkeep
