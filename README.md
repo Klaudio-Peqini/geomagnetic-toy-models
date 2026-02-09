@@ -76,3 +76,63 @@ geomagnetic-toy-models/
 
 └── environment/ # Reproducible Python environments
 
+
+---
+
+## Diagnostics and Observables
+
+Across models, we aim to compute consistent diagnostics such as:
+
+- axial dipole moment
+- polarity time series
+- reversal and excursion statistics
+- power spectra and characteristic timescales
+- tilt angles and dipole dominance measures
+
+This allows **cross-model comparison** and meaningful confrontation with data.
+
+---
+
+## Intended Audience
+
+This repository is intended for:
+
+- researchers in geomagnetism and geodynamo theory
+- physicists interested in stochastic and nonlinear dynamical systems
+- graduate students and advanced undergraduates
+- educators seeking interpretable models for teaching purposes
+
+---
+
+## Relation to Full Geodynamo Simulations
+
+Where relevant, toy-model outputs can be compared with:
+
+- 3D MHD simulations (e.g. XSHELLS)
+- paleomagnetic field models and reversal records
+- scaling laws and phenomenological arguments
+
+The long-term goal is to **connect insight across levels of description**.
+
+---
+
+## Status
+
+This repository is under active development.  
+Models, diagnostics, and documentation will expand progressively.
+
+---
+
+## Citation
+
+If you use this repository in academic work, please cite it using the provided `CITATION.cff` file or the recommended citation shown on GitHub.
+
+---
+
+## License
+
+See the `LICENSE` file for usage terms.
+
+---
+
+*Reduction is not simplification — it is clarification.*
