@@ -1,129 +1,361 @@
 # Geomagnetic Toy Models
 
-**Low-dimensional, conceptual, and stochastic models of the geomagnetic field**
+Low-dimensional, conceptual, and stochastic models for exploring the
+long-term dynamics of the geomagnetic field.
 
----
+------------------------------------------------------------------------
 
-## Overview
+## Scientific Purpose
 
-This repository collects a curated set of **reduced, low-dimensional “toy models”** designed to explore the long-term dynamics of the Earth's magnetic field, with particular emphasis on:
+This repository collects reduced-order and interpretable models designed
+to study core qualitative phenomena of the Earth's magnetic field,
+especially:
 
-- geomagnetic **reversals** and **excursions**
-- stochastic transitions and bistability
-- dipole dominance and breakdown
-- scaling arguments and interpretability
-- links between conceptual models and full geodynamo simulations
+-   geomagnetic reversals,
+-   geomagnetic excursions,
+-   stochastic transitions between metastable states,
+-   dipole dominance and its breakdown,
+-   synchronization and collective behavior,
+-   connections between conceptual models, paleomagnetic records, and
+    full geodynamo simulations.
 
-These models are **not intended to replace full 3D magnetohydrodynamic (MHD) simulations** of the geodynamo (e.g. XSHELLS or similar frameworks). Instead, they serve as **complementary tools** aimed at physical insight, rapid experimentation, pedagogical clarity, and hypothesis testing.
+The goal is **not** to replace full 3D magnetohydrodynamic geodynamo
+simulations. Instead, this repository provides a framework for:
 
----
+-   physical intuition,
+-   rapid prototyping,
+-   pedagogical exploration,
+-   hypothesis testing,
+-   reduced-order comparison against observations and large simulations.
 
-## Motivation
+In other words, this is a repository for **understanding before scaling
+up**.
 
-Full geodynamo simulations are computationally expensive and often difficult to interpret at a mechanistic level. Toy models, by contrast, allow one to:
+------------------------------------------------------------------------
 
-- isolate essential degrees of freedom,
-- test conceptual mechanisms for reversals and excursions,
-- explore parameter space efficiently,
-- connect paleomagnetic observations to dynamical systems theory,
-- provide interpretable bridges between theory, data, and simulation.
+## Why Toy Models Matter
 
-This repository embraces the philosophy that **understanding often begins with reduction**.
+Full geodynamo simulations are computationally demanding and often
+difficult to interpret mechanistically. Low-dimensional models are
+useful because they allow us to:
 
----
+-   isolate essential degrees of freedom,
+-   study reversal mechanisms in controlled settings,
+-   scan parameter space quickly,
+-   separate deterministic structure from stochastic forcing,
+-   connect dynamical-systems language to geomagnetic observables,
+-   build bridges between theory, numerical simulation, and
+    paleomagnetic data.
 
-## Scope of the Repository
+This repository embraces the idea that reduction is not
+oversimplification when it is done carefully; it is often the first step
+toward interpretation.
 
-The models included here span several conceptual families:
+------------------------------------------------------------------------
 
-- **Domino and coupled-element models**  
-  (collective polarity reversals, interaction-driven dynamics)
+## What This Repository Contains
 
-- **Bistable and double-well systems**  
-  (noise-induced transitions, stochastic resonance)
+The project is organized around several complementary families of
+models.
 
-- **Phase and oscillator-based models**  
-  (synchronization, coherence loss, collective modes)
+### 1. Domino and coupled-element models
 
-- **Data-informed reduced models**  
-  (low-dimensional observables extracted from simulations or paleodata)
+These models represent the field through interacting effective units,
+often inspired by collective alignment, polarity competition, or
+interacting degrees of freedom. They are useful for exploring:
 
-Each model family lives in its own subdirectory under `models/`, with local documentation and examples.
+-   collective polarity reversals,
+-   interaction-driven state switching,
+-   emergent coherence and loss of coherence.
 
----
+### 2. Bistable and double-well models
 
-## Repository Structure
+These formulations represent the geomagnetic dipole as an effective
+state evolving in a potential landscape with one or more stable wells.
+They are especially useful for:
 
+-   noise-induced transitions,
+-   residence-time statistics,
+-   stochastic resonance,
+-   excursion-like vs reversal-like dynamics.
+
+### 3. Phase and oscillator-based models
+
+These models borrow ideas from nonlinear dynamics and synchronization
+theory. They are relevant when one wants to explore:
+
+-   coherence,
+-   collective phase behavior,
+-   synchronization/desynchronization,
+-   oscillatory reduced descriptions of field variability.
+
+### 4. Data-driven reduced models
+
+These models sit closer to observables extracted from paleomagnetic
+records or high-dimensional simulations. Their purpose is to help
+connect:
+
+-   reduced observables,
+-   effective dynamical variables,
+-   geodynamo-inspired low-dimensional descriptions,
+-   comparison with more realistic datasets.
+
+------------------------------------------------------------------------
+
+## Current Repository Structure
+
+``` text
 geomagnetic-toy-models/
-```
 │
-├── models/ # Individual toy models and formulations
-├── diagnostics/ # Common diagnostics (dipole moment, reversals, spectra)
-├── notebooks/ # Exploratory and pedagogical Jupyter notebooks
-├── experiments/ # Parameter scans, scaling tests, sensitivity studies
-├── data/ # Paleomagnetic or synthetic data (lightweight)
-├── docs/ # Conceptual and theoretical documentation
-├── utils/ # Numerical and plotting utilities
-├── tests/ # Basic correctness and regression tests
-└── environment/ # Reproducible Python environments
+├── data/
+├── diagnostics/
+│   ├── dipole_moment.py
+│   ├── polarity.py
+│   ├── power_spectra.py
+│   ├── reversal_statistics.py
+│   └── tilt_angle.py
+│
+├── docs/
+│   ├── comparison_with_full_MHD.md
+│   ├── model_taxonomy.md
+│   ├── overview.md
+│   └── physical_background.md
+│
+├── environment/
+│   ├── environment.yml
+│   └── requirements.txt
+│
+├── models/
+│   ├── bistable_models/
+│   │   ├── double_well.py
+│   │   └── stochastic_forcing.py
+│   │
+│   ├── data_driven_models/
+│   │   └── reduced_observables.py
+│   │
+│   ├── domino_model/
+│   │   ├── analysis.py
+│   │   ├── parameters.py
+│   │   └── simulate.py
+│   │
+│   └── phase_oscillator_models/
+│       └── kuramoto_like.py
+│
+├── notebooks/
+│   ├── 01_basic_dynamics.ipynb
+│   ├── 02_reversals_and_excursions.ipynb
+│   ├── 03_noise_induced_transitions.ipynb
+│   └── 04_comparison_with_CALS10k.ipynb
+│
+├── tests/
+├── utils/
+│
+├── CITATION.cff
+├── LICENSE
+└── README.md
 ```
 
----
+------------------------------------------------------------------------
 
-## Diagnostics and Observables
+## Installation
 
-Across models, we aim to compute consistent diagnostics such as:
+### Clone the repository
 
-- axial dipole moment
-- polarity time series
-- reversal and excursion statistics
-- power spectra and characteristic timescales
-- tilt angles and dipole dominance measures
+``` bash
+git clone https://github.com/Klaudio-Peqini/geomagnetic-toy-models.git
+cd geomagnetic-toy-models
+```
 
-This allows **cross-model comparison** and meaningful confrontation with data.
+### Create a virtual environment
 
----
+``` bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### Install dependencies
+
+``` bash
+pip install --upgrade pip
+pip install -r environment/requirements.txt
+```
+
+------------------------------------------------------------------------
+
+## Using Conda
+
+``` bash
+git clone https://github.com/Klaudio-Peqini/geomagnetic-toy-models.git
+cd geomagnetic-toy-models
+conda env create -f environment/environment.yml
+conda activate geomagnetic-toy-models
+```
+
+------------------------------------------------------------------------
+
+## Quick Start
+
+Launch the notebooks:
+
+``` bash
+jupyter notebook notebooks/
+```
+
+or
+
+``` bash
+jupyter lab
+```
+
+------------------------------------------------------------------------
+
+## Bash Command Cookbook
+
+### Run the domino model
+
+``` bash
+python3 models/domino_model/simulate.py
+```
+
+### Run domino analysis
+
+``` bash
+python3 models/domino_model/analysis.py
+```
+
+### Run the bistable model
+
+``` bash
+python3 models/bistable_models/double_well.py
+```
+
+### Run stochastic forcing
+
+``` bash
+python3 models/bistable_models/stochastic_forcing.py
+```
+
+### Run phase oscillator model
+
+``` bash
+python3 models/phase_oscillator_models/kuramoto_like.py
+```
+
+### Run reduced observable model
+
+``` bash
+python3 models/data_driven_models/reduced_observables.py
+```
+
+------------------------------------------------------------------------
+
+## Diagnostics
+
+You can also execute diagnostic tools independently:
+
+``` bash
+python3 diagnostics/dipole_moment.py
+python3 diagnostics/polarity.py
+python3 diagnostics/power_spectra.py
+python3 diagnostics/reversal_statistics.py
+python3 diagnostics/tilt_angle.py
+```
+
+------------------------------------------------------------------------
+
+## Running Tests
+
+``` bash
+pytest -v
+```
+
+or
+
+``` bash
+python3 -m pytest tests/
+```
+
+------------------------------------------------------------------------
+
+## Export Notebooks
+
+Execute notebook from terminal:
+
+``` bash
+jupyter nbconvert --to notebook --execute notebooks/01_basic_dynamics.ipynb
+```
+
+Export notebook to HTML:
+
+``` bash
+jupyter nbconvert --to html notebooks/02_reversals_and_excursions.ipynb
+```
+
+------------------------------------------------------------------------
+
+## Recommended Scientific Workflow
+
+1.  Explore notebooks to understand qualitative dynamics.
+2.  Run individual model scripts.
+3.  Compute diagnostics.
+4.  Compare reversal statistics across models.
+5.  Relate results to paleomagnetic observations or geodynamo
+    simulations.
+
+------------------------------------------------------------------------
+
+## Future Improvements
+
+Potential next developments:
+
+-   Convert repository into a full Python package (`pyproject.toml`)
+-   Add CLI interface
+-   Standardize model input/output
+-   Add parameter-scan scripts
+-   Expand test coverage
+-   Add automated figure generation
+-   Introduce experiment pipelines
+
+------------------------------------------------------------------------
+
+## Reproducibility
+
+For scientific work it is recommended to record:
+
+-   random seeds
+-   time step
+-   simulation duration
+-   parameter values
+-   diagnostic configuration
+-   dataset versions
+
+------------------------------------------------------------------------
 
 ## Intended Audience
 
-This repository is intended for:
+This repository is suitable for:
 
-- researchers in geomagnetism and geodynamo theory
-- physicists interested in stochastic and nonlinear dynamical systems
-- graduate students and advanced undergraduates
-- educators seeking interpretable models for teaching purposes
+-   geomagnetism researchers
+-   nonlinear dynamics researchers
+-   geodynamo modelers
+-   graduate students
+-   computational physics courses
 
----
-
-## Relation to Full Geodynamo Simulations
-
-Where relevant, toy-model outputs can be compared with:
-
-- 3D MHD simulations (e.g. XSHELLS)
-- paleomagnetic field models and reversal records
-- scaling laws and phenomenological arguments
-
-The long-term goal is to **connect insight across levels of description**.
-
----
-
-## Status
-
-This repository is under active development.  
-Models, diagnostics, and documentation will expand progressively.
-
----
+------------------------------------------------------------------------
 
 ## Citation
 
-If you use this repository in academic work, please cite it using the provided `CITATION.cff` file or the recommended citation shown on GitHub.
+Please cite this repository using the `CITATION.cff` file provided in
+the project.
 
----
+------------------------------------------------------------------------
 
 ## License
 
-See the `LICENSE` file for usage terms.
+See the `LICENSE` file for details.
 
----
+------------------------------------------------------------------------
 
-*Reduction is not simplification — it is clarification.*
+## Philosophy
+
+**Reduction is not simplification --- it is clarification.**
