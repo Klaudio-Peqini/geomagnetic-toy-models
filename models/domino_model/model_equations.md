@@ -27,17 +27,17 @@ This makes the model qualitatively different from a single-variable double-well 
 
 Let the system contain $N$ interacting effective elements. We denote by
 
-$\theta_i(t), \qquad i = 1,2,\dots,N$
+$$\theta_i(t), \qquad i = 1,2,\dots,N$$
 
 the angular orientation of the $i$-th element relative to a preferred axis, usually interpreted as the rotation axis or dipole axis.
 
 A convenient magnetic proxy associated with each element is its axial projection:
 
-$m_i(t) = \cos \theta_i(t).$
+$$m_i(t) = \cos \theta_i(t).$$
 
 The global dipole-like observable is then defined as the mean projection:
 
-$M(t) = \frac{1}{N}\sum_{i=1}^{N} \cos \theta_i(t).$
+$$M(t) = \frac{1}{N}\sum_{i=1}^{N} \cos \theta_i(t).$$
 
 This quantity plays the role of the effective axial dipole moment or polarity indicator.
 
@@ -53,7 +53,7 @@ This quantity plays the role of the effective axial dipole moment or polarity in
 
 A standard domino-style formulation uses second-order stochastic dynamics for each effective element:
 
-$\ddot{\theta_i} + \gamma \dot{\theta_i}=-\frac{\partial V(\theta_i)}{\partial \theta_i} + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\eta_i(t).$
+$$\ddot{\theta_i} + \gamma \dot{\theta_i}=-\frac{\partial V(\theta_i)}{\partial \theta_i} + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\eta_i(t).$$
 
 Here:
 
@@ -104,7 +104,7 @@ These correspond to positive and negative axial alignment.
 
 The interaction term is
 
-$\lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i).$
+$$\lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i).$$
 
 This is analogous to coupling terms used in phase and spin-like systems.
 
@@ -121,10 +121,12 @@ The matrix $A_{ij}$ determines the network structure:
 - **all-to-all coupling**:
   $A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$
 - **nearest-neighbor coupling** on a ring:
+  
   $$
   A_{ij} = 1 \quad \text{if } j = i \pm 1 \pmod{N}, \qquad
   A_{ij} = 0 \quad \text{otherwise.}
   $$
+  
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
