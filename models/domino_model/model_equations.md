@@ -53,7 +53,7 @@ This quantity plays the role of the effective axial dipole moment or polarity in
 
 A standard domino-style formulation uses second-order stochastic dynamics for each effective element:
 
-$\ddot{\theta_i} + \gamma \dot{\theta_i}=-\frac{\partial V(\theta_i)}{\partial \theta_i} + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$
+$\ddot{\theta_i} + \gamma \dot{\theta_i}=-\frac{\partial V(\theta_i)}{\partial \theta_i} + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\eta_i(t).$
 
 Here:
 
@@ -104,35 +104,27 @@ These correspond to positive and negative axial alignment.
 
 The interaction term is
 
-\[
-\lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i).
-\]
+$\lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i).$
 
 This is analogous to coupling terms used in phase and spin-like systems.
 
 ### Meaning
 
-- If \(\theta_j > \theta_i\), the term tends to increase \(\theta_i\),
-- if \(\theta_j < \theta_i\), it tends to decrease \(\theta_i\),
-- in general it tends to reduce angular differences and promote coherence.
+- If $\theta_j > \theta_i$, the term tends to increase $\theta_i$,
+- if $\theta_j < \theta_i$, it tends to decrease $\theta_i$,
+- In general, it tends to reduce angular differences and promote coherence.
 
 ### Interaction matrix
 
-The matrix \(A_{ij}\) determines the network structure:
+The matrix $A_{ij}$ determines the network structure:
 
 - **all-to-all coupling**:
-  \[
-  A_{ij} = \frac{1}{N}
-  \quad \text{for } i\neq j,
-  \]
+  $  A_{ij} = \frac{1}{N}  \quad \text{for } i\neq j,$
 - **nearest-neighbor coupling** on a ring:
-  \[
-  A_{ij} =
-  \begin{cases}
+  $  A_{ij} = \begin{cases}
   1, & j=i\pm1 \ (\mathrm{mod}\ N),\\
   0, & \text{otherwise},
-  \end{cases}
-  \]
+  \end{cases}$
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
@@ -141,19 +133,13 @@ A simple all-to-all version is often the most convenient in toy modeling.
 
 ## 6. Noise Model
 
-The stochastic terms \(\eta_i(t)\) are commonly taken to be independent Gaussian white noises with:
+The stochastic terms $\eta_i(t)$ are commonly taken to be independent Gaussian white noises with:
 
-\[
-\langle \eta_i(t) \rangle = 0,
-\]
+$\langle \eta_i(t) \rangle = 0,$
 
 and
 
-\[
-\langle \eta_i(t)\eta_j(t') \rangle
-=
-\delta_{ij}\,\delta(t-t').
-\]
+$\langle \eta_i(t)\eta_j(t') \rangle = \delta_{ij}\,\delta(t-t').$
 
 Thus, the parameter \(\sigma\) sets the forcing amplitude.
 
