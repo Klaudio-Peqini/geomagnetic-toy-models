@@ -4,7 +4,7 @@
 
 This file provides a **detailed mathematical formulation** for a domino-style geomagnetic toy model, suitable for the `models/domino_model/` folder of the `geomagnetic-toy-models` repository.
 
-At the moment, the repository folder contains `simulate.py`, `parameters.py`, and `analysis.py`, but the raw file views for those Python files currently appear empty in the public repository snapshot I checked, and `model_equations.md` is also empty. Therefore, the equations written here are a **carefully structured canonical formulation** of a domino-type geomagnetic toy model that is consistent with the scientific purpose of the folder, rather than a transcription of implementation details from non-empty code. citeturn314557view0turn951554view0turn951554view1turn951554view2turn951554view3
+At the moment, the repository folder contains `simulate.py`, `parameters.py`, and `analysis.py`, but the raw file views for those Python files currently appear empty in the public repository snapshot I checked, and `model_equations.md` is also empty. Therefore, the equations written here are a **carefully structured canonical formulation** of a domino-type geomagnetic toy model that is consistent with the scientific purpose of the folder, rather than a transcription of implementation details from non-empty code.
 
 ---
 
@@ -17,7 +17,7 @@ The central scientific idea is:
 - each element tends to align with its neighbors or with a global mean field,
 - each element is subject to damping and fluctuations,
 - the global polarity emerges from collective order,
-- reversals occur when the coherent global state collapses and reforms with opposite sign.
+- Reversals occur when the coherent global state collapses and reforms with opposite sign.
 
 This makes the model qualitatively different from a single-variable double-well model.
 
@@ -25,33 +25,27 @@ This makes the model qualitatively different from a single-variable double-well 
 
 ## 2. Choice of State Variables
 
-Let the system contain \(N\) interacting effective elements. We denote by
+Let the system contain $N$ interacting effective elements. We denote by
 
-\[
-\theta_i(t), \qquad i = 1,2,\dots,N
-\]
+$\theta_i(t), \qquad i = 1,2,\dots,N$
 
-the angular orientation of the \(i\)-th element relative to a preferred axis, usually interpreted as the rotation axis or dipole axis.
+the angular orientation of the $i$-th element relative to a preferred axis, usually interpreted as the rotation axis or dipole axis.
 
 A convenient magnetic proxy associated with each element is its axial projection:
 
-\[
-m_i(t) = \cos \theta_i(t).
-\]
+$m_i(t) = \cos \theta_i(t).$
 
 The global dipole-like observable is then defined as the mean projection:
 
-\[
-M(t) = \frac{1}{N}\sum_{i=1}^{N} \cos \theta_i(t).
-\]
+$M(t) = \frac{1}{N}\sum_{i=1}^{N} \cos \theta_i(t).$
 
 This quantity plays the role of the effective axial dipole moment or polarity indicator.
 
 ### Interpretation
 
-- \(M(t) > 0\): dominant positive polarity,
-- \(M(t) < 0\): dominant negative polarity,
-- \(M(t) \approx 0\): weak global coherence or transition state.
+- $M(t) > 0$: dominant positive polarity,
+- $M(t) < 0$: dominant negative polarity,
+- $M(t) \approx 0$: weak global coherence or transition state.
 
 ---
 
