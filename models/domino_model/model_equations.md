@@ -53,11 +53,7 @@ This quantity plays the role of the effective axial dipole moment or polarity in
 
 A standard domino-style formulation uses second-order stochastic dynamics for each effective element:
 
-$\ddot{\theta}_i + \gamma \dot{\theta}_i
-=
--\frac{\partial V(\theta_i)}{\partial \theta_i}
-+ \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i)
-+ \sigma\,\eta_i(t).$
+$\ddot{\theta}_i + \gamma \dot{\theta}_i=-\frac{\partial V(\theta_i)}{\partial \theta_i} + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$
 
 Here:
 
@@ -87,21 +83,11 @@ which favors orientations near $\theta = 0$ and $\theta = \pi$, corresponding to
 
 Then
 
-$-\frac{\partial V}{\partial \theta}
-=
-- \frac{d}{d\theta}\left(-\alpha \cos^{2}\theta\right)
-=
--2\alpha \sin\theta \cos\theta
-=
--\alpha \sin(2\theta).$
+$-\frac{\partial V}{\partial \theta} = - \frac{d}{d\theta}\left(-\alpha \cos^{2}\theta\right) = -2\alpha \sin\theta \cos\theta = -\alpha \sin(2\theta).$
 
 Thus, the dynamical equation becomes
 
-$\ddot{\theta}_i + \gamma \dot{\theta}_i
-=
--\alpha \sin(2\theta_i)
-+ \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i)
-+ \sigma\,\eta_i(t).$
+$\ddot{\theta}_i + \gamma \dot{\theta}_i = -\alpha \sin(2\theta_i) + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$
 
 ### Interpretation of the potential
 
