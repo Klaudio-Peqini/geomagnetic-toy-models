@@ -53,22 +53,20 @@ This quantity plays the role of the effective axial dipole moment or polarity in
 
 A standard domino-style formulation uses second-order stochastic dynamics for each effective element:
 
-\[
-\ddot{\theta}_i + \gamma \dot{\theta}_i
+$\ddot{\theta}_i + \gamma \dot{\theta}_i
 =
 -\frac{\partial V(\theta_i)}{\partial \theta_i}
 + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i)
-+ \sigma\,\eta_i(t).
-\]
++ \sigma\,\eta_i(t).$
 
 Here:
 
-- \(\gamma\) is a damping coefficient,
-- \(V(\theta)\) is an effective single-element potential,
-- \(\lambda\) is the coupling strength,
-- \(A_{ij}\) is the interaction matrix,
-- \(\sigma\) is the noise amplitude,
-- \(\eta_i(t)\) is a stochastic forcing term.
+- $\gamma$ is a damping coefficient,
+- $V(\theta)$ is an effective single-element potential,
+- $\lambda$ is the coupling strength,
+- $A_{ij}$ is the interaction matrix,
+- $\sigma$ is the noise amplitude,
+- $\eta_i(t)$ is a stochastic forcing term.
 
 This equation says that each element evolves under the competition between:
 
@@ -83,40 +81,34 @@ This equation says that each element evolves under the competition between:
 
 A commonly used form for the local potential is
 
-\[
-V(\theta) = -\alpha \cos^{2}\theta,
-\]
+$V(\theta) = -\alpha \cos^{2}\theta,$
 
-which favors orientations near \(\theta = 0\) and \(\theta = \pi\), corresponding to the two opposite axial polarities.
+which favors orientations near $\theta = 0$ and $\theta = \pi$, corresponding to the two opposite axial polarities.
 
 Then
 
-\[
--\frac{\partial V}{\partial \theta}
+$-\frac{\partial V}{\partial \theta}
 =
 - \frac{d}{d\theta}\left(-\alpha \cos^{2}\theta\right)
 =
 -2\alpha \sin\theta \cos\theta
 =
--\alpha \sin(2\theta).
-\]
+-\alpha \sin(2\theta).$
 
 Thus, the dynamical equation becomes
 
-\[
-\ddot{\theta}_i + \gamma \dot{\theta}_i
+$\ddot{\theta}_i + \gamma \dot{\theta}_i
 =
 -\alpha \sin(2\theta_i)
 + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i)
-+ \sigma\,\eta_i(t).
-\]
++ \sigma\,\eta_i(t).$
 
 ### Interpretation of the potential
 
-The term \(-\alpha \sin(2\theta_i)\) drives each element toward the two preferred states:
+The term $-\alpha \sin(2\theta_i)$ drives each element toward the two preferred states:
 
-- \(\theta_i \approx 0\),
-- \(\theta_i \approx \pi\).
+- $\theta_i \approx 0$,
+- $\theta_i \approx \pi$.
 
 These correspond to positive and negative axial alignment.
 
