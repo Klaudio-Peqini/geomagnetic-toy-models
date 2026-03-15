@@ -53,7 +53,7 @@ This quantity plays the role of the effective axial dipole moment or polarity in
 
 A standard domino-style formulation uses second-order stochastic dynamics for each effective element:
 
-$\ddot{\theta}_i + \gamma \dot{\theta}_i=-\frac{\partial V(\theta_i)}{\partial \theta_i} + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$
+$\ddot{\theta_i} + \gamma \dot{\theta_i}=-\frac{\partial V(\theta_i)}{\partial \theta_i} + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$
 
 Here:
 
