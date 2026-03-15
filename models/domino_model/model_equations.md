@@ -121,7 +121,11 @@ The matrix $A_{ij}$ determines the network structure:
 - **all-to-all coupling**:
   $A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$
 - **nearest-neighbor coupling** on a ring:
-  $  A_{ij} = \begin{cases} 1, & j=i\pm1 \ (\mathrm{mod}\ N),\\ 0, & \text{otherwise}, \end{cases}$
+  $A_{ij} =
+  \begin{cases}
+  1, & j = i \pm 1 \pmod{N}, \\
+  0, & \text{otherwise}
+  \end{cases}$
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
@@ -155,24 +159,13 @@ The noise is not meant to be literal thermal noise. Instead, it is a reduced rep
 
 For implementation, it is often convenient to rewrite the system as first-order equations by introducing angular velocities:
 
-\[
-\omega_i = \dot{\theta}_i.
-\]
+$\omega_i = \dot{\theta}_i.$\]
 
 Then the system becomes
 
-\[
-\dot{\theta}_i = \omega_i,
-\]
+$\dot{\theta}_i = \omega_i,$
 
-\[
-\dot{\omega}_i
-=
--\gamma \omega_i
--\alpha \sin(2\theta_i)
-+ \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i)
-+ \sigma\,\eta_i(t).
-\]
+$\dot{\omega}_i = -\gamma \omega_i - \alpha \sin(2\theta_i) + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$
 
 This form is usually the most practical for coding in `simulate.py`.
 
@@ -184,34 +177,20 @@ If the coupling is all-to-all, the interaction can be expressed in terms of a gl
 
 Define
 
-\[
-R e^{i\Phi}
-=
-\frac{1}{N}\sum_{j=1}^{N} e^{i\theta_j},
-\]
+$R e^{i\Phi} = \frac{1}{N}\sum_{j=1}^{N} e^{i\theta_j},$
 
 where:
 
-- \(R \in [0,1]\) is the coherence amplitude,
-- \(\Phi\) is the mean phase.
+- $R \in [0,1]$ is the coherence amplitude,
+- $\Phi$ is the mean phase.
 
 Then one can show that
 
-\[
-\frac{1}{N}\sum_{j=1}^{N}\sin(\theta_j-\theta_i)
-=
-R\sin(\Phi-\theta_i).
-\]
+$\frac{1}{N}\sum_{j=1}^{N}\sin(\theta_j-\theta_i) = R\sin(\Phi-\theta_i).$
 
 So the equation becomes
 
-\[
-\ddot{\theta}_i + \gamma \dot{\theta}_i
-=
--\alpha \sin(2\theta_i)
-+ \lambda R \sin(\Phi-\theta_i)
-+ \sigma\,\eta_i(t).
-\]
+$\ddot{\theta}_i + \gamma \dot{\theta}_i = - \alpha \sin(2\theta_i) + \lambda R \sin(\Phi-\theta_i) + \sigma\,\eta_i(t).$
 
 This is a very useful form because it makes explicit that each element interacts with the collective mean state.
 
@@ -221,9 +200,7 @@ This is a very useful form because it makes explicit that each element interacts
 
 The most important macroscopic observable is the mean axial projection:
 
-\[
-M(t) = \frac{1}{N}\sum_{i=1}^{N}\cos\theta_i(t).
-\]
+$M(t) = \frac{1}{N}\sum_{i=1}^{N}\cos\theta_i(t).$
 
 This is the simplest polarity proxy.
 
@@ -231,28 +208,22 @@ Other useful observables include:
 
 ### 9.1 Mean phase coherence
 
-\[
-R(t) = \left|\frac{1}{N}\sum_{i=1}^{N} e^{i\theta_i(t)}\right|.
-\]
+$R(t) = \left|\frac{1}{N}\sum_{i=1}^{N} e^{i\theta_i(t)}\right|.$
 
 This measures how synchronized the system is.
 
-- \(R \approx 1\): strong coherence,
-- \(R \ll 1\): disordered state.
+- $R \approx 1$: strong coherence,
+- $R \ll 1$: disordered state.
 
 ### 9.2 Angular velocity average
 
-\[
-\Omega(t) = \frac{1}{N}\sum_{i=1}^{N}\omega_i(t).
-\]
+$\Omega(t) = \frac{1}{N}\sum_{i=1}^{N}\omega_i(t).$
 
 This can help detect rapid collective reorganizations.
 
 ### 9.3 Polarity sign
 
-\[
-P(t) = \operatorname{sgn}(M(t)).
-\]
+$P(t) = \operatorname{sgn}(M(t)).$
 
 This is useful for reversal detection.
 
