@@ -77,13 +77,13 @@ This equation says that each element evolves under the competition between:
 
 A commonly used form for the local potential is
 
-$V(\theta) = -\alpha \cos^{2}\theta,$
+$$V(\theta) = -\alpha \cos^{2}\theta,$$
 
 which favors orientations near $\theta = 0$ and $\theta = \pi$, corresponding to the two opposite axial polarities.
 
 Then
 
-$-\frac{\partial V}{\partial \theta} = - \frac{d}{d\theta}\left(-\alpha \cos^{2}\theta\right) = -2\alpha \sin\theta \cos\theta = -\alpha \sin(2\theta).$
+$$-\frac{\partial V}{\partial \theta} = - \frac{d}{d\theta}\left(-\alpha \cos^{2}\theta\right) = -2\alpha \sin\theta \cos\theta = -\alpha \sin(2\theta).$$
 
 Thus, the dynamical equation becomes
 
@@ -121,11 +121,10 @@ The matrix $A_{ij}$ determines the network structure:
 - **all-to-all coupling**:
   $A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$
 - **nearest-neighbor coupling** on a ring:
-  $$A_{ij} =
-  \begin{cases}
-  1, & j = i \pm 1 \pmod{N}, \\
-  0, & \text{otherwise}
-  \end{cases}$$
+  $$
+  A_{ij} = 1 \quad \text{if } j = i \pm 1 \pmod{N}, \qquad
+  A_{ij} = 0 \quad \text{otherwise.}
+  $$
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
