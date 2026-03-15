@@ -1,0 +1,36 @@
+# Core numerical stack
+numpy>=1.24
+scipy>=1.10
+
+# Data handling
+pandas>=2.0
+xarray>=2023.1.0
+
+# Plotting and visualization
+matplotlib>=3.7
+seaborn>=0.12
+
+# Jupyter ecosystem
+jupyter>=1.0
+notebook>=7.0
+jupyterlab>=4.0
+ipykernel>=6.25
+
+# Signal processing / spectral analysis support
+statsmodels>=0.14
+
+# Progress bars and CLI convenience
+tqdm>=4.66
+
+# Serialization / config helpers
+pyyaml>=6.0
+
+# Testing and quality
+pytest>=7.4
+pytest-cov>=4.1
+
+# Optional documentation support
+markdown>=3.5
+
+# Optional scientific utilities often useful in toy-model workflows
+scikit-learn>=1.3
