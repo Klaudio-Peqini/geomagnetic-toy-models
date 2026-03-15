@@ -87,7 +87,7 @@ $-\frac{\partial V}{\partial \theta} = - \frac{d}{d\theta}\left(-\alpha \cos^{2}
 
 Thus, the dynamical equation becomes
 
-$\ddot{\theta}_i + \gamma \dot{\theta}_i = -\alpha \sin(2\theta_i) + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$
+$$\ddot{\theta}_i + \gamma \dot{\theta}_i = -\alpha \sin(2\theta_i) + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i) + \sigma\,\eta_i(t).$$
 
 ### Interpretation of the potential
 
@@ -121,11 +121,11 @@ The matrix $A_{ij}$ determines the network structure:
 - **all-to-all coupling**:
   $A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$
 - **nearest-neighbor coupling** on a ring:
-  $A_{ij} =
+  $$A_{ij} =
   \begin{cases}
   1, & j = i \pm 1 \pmod{N}, \\
   0, & \text{otherwise}
-  \end{cases}$
+  \end{cases}$$
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
