@@ -121,10 +121,7 @@ The matrix $A_{ij}$ determines the network structure:
 - **all-to-all coupling**:
   $  A_{ij} = \frac{1}{N}  \quad \text{for } i\neq j,$
 - **nearest-neighbor coupling** on a ring:
-  $  A_{ij} = \begin{cases}
-  1, & j=i\pm1 \ (\mathrm{mod}\ N),\\
-  0, & \text{otherwise},
-  \end{cases}$
+  $  A_{ij} = \begin{cases} 1, & j=i\pm1 \ (\mathrm{mod}\ N),\\ 0, & \text{otherwise}, \end{cases}$
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
@@ -141,7 +138,7 @@ and
 
 $\langle \eta_i(t)\eta_j(t') \rangle = \delta_{ij}\,\delta(t-t').$
 
-Thus, the parameter \(\sigma\) sets the forcing amplitude.
+Thus, the parameter $\sigma$ sets the forcing amplitude.
 
 ### Physical interpretation
 
@@ -183,7 +180,7 @@ This form is usually the most practical for coding in `simulate.py`.
 
 ## 8. Mean-Field Simplification
 
-If the coupling is all-to-all, the interaction can be expressed through a global order parameter.
+If the coupling is all-to-all, the interaction can be expressed in terms of a global order parameter.
 
 Define
 
