@@ -123,8 +123,11 @@ The matrix $A_{ij}$ determines the network structure:
 - **nearest-neighbor coupling** on a ring:
 
 $$
-A_{ij} = 1 \quad \text{if } j = i \pm 1 \pmod{N}, \qquad
-A_{ij} = 0 \quad \text{otherwise.}
+A_{ij} =
+\begin{cases}
+1, & j = i \pm 1 \pmod{N}, \\
+0, & \text{otherwise}
+\end{cases}
 $$
 
 - **weighted or random coupling**, if desired.
