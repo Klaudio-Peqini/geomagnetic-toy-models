@@ -100,6 +100,19 @@ connect:
 -   geodynamo-inspired low-dimensional descriptions,
 -   comparison with more realistic datasets.
 
+### 5. Numerical integrators
+
+Included:
+-    deterministic integrators: Euler, RK2, RK4
+-    stochastic integrators: Euler-Maruyama, stochastic Heun, Milstein
+
+### 6. Other
+
+The repo further contains:
+-    reduced observable comparison utilities
+-    generic diagnostics
+-    basic tests
+
 ------------------------------------------------------------------------
 
 ## Current Repository Structure
