@@ -121,12 +121,10 @@ The matrix $A_{ij}$ determines the network structure:
 - **all-to-all coupling**:
   $A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$
 - **nearest-neighbor coupling** on a ring:
-  
-  $$
-  A_{ij} = 1 \quad \text{if } j = i \pm 1 \pmod{N}, \qquad
-  A_{ij} = 0 \quad \text{otherwise.}
-  $$
-  
+    $$
+    A_{ij} = 1 \quad \text{if } j = i \pm 1 \pmod{N}, \qquad
+    A_{ij} = 0 \quad \text{otherwise.}
+    $$
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
@@ -396,21 +394,17 @@ Again, this is a scientifically consistent recommendation, not a reconstruction 
 
 ## 17. Comparison with Simpler Bistable Models
 
-A bistable model usually starts directly from one effective variable \(x(t)\), for example:
+A bistable model usually starts directly from one effective variable $x(t)$, for example:
 
-\[
-\dot{x} = -U'(x) + \sigma \eta(t).
-\]
+$$\dot{x} = -U'(x) + \sigma \eta(t).$$
 
-By contrast, the domino model first evolves many interacting units \(\theta_i\) and defines the macroscopic dipole only afterwards through:
+By contrast, the domino model first evolves many interacting units $\theta_i$ and defines the macroscopic dipole only afterwards through:
 
-\[
-M(t) = \frac{1}{N}\sum_{i=1}^{N}\cos\theta_i(t).
-\]
+$$M(t) = \frac{1}{N}\sum_{i=1}^{N}\cos\theta_i(t).$$
 
 This gives the domino model an important conceptual advantage:
 
-the reversal is a **collective phenomenon**, not just the motion of one variable in a prescribed landscape.
+The reversal is a **collective phenomenon**, not just the motion of one variable in a prescribed landscape.
 
 ---
 
