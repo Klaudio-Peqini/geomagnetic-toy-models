@@ -119,7 +119,9 @@ This is analogous to coupling terms used in phase and spin-like systems.
 The matrix $A_{ij}$ determines the network structure:
 
 - **all-to-all coupling**:
-  $A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$
+  
+$$A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$$
+
 - **nearest-neighbor coupling** on a ring:
 
 $$
