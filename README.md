@@ -277,6 +277,20 @@ python3 -m pytest tests/
 
 ------------------------------------------------------------------------
 
+## Typical commands:
+
+``` bash
+python3 models/bistable_models/double_well.py --method rk4
+python3 models/bistable_models/double_well.py --method euler-maruyama --sigma 0.6
+python3 models/bistable_models/stochastic_forcing.py --method stochastic-heun
+python3 models/domino_model/simulate.py --method euler-maruyama --topology nearest --save domino_run.npz
+python3 models/domino_model/analysis.py domino_run.npz
+python3 models/phase_oscillator_models/kuramoto_like.py --method rk4 --sigma 0.0
+python3 models/data_driven_models/reduced_observables.py pytest -v
+```
+
+------------------------------------------------------------------------
+
 ## Export Notebooks
 
 Execute notebook from terminal:
