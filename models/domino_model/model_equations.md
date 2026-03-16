@@ -121,10 +121,12 @@ The matrix $A_{ij}$ determines the network structure:
 - **all-to-all coupling**:
   $A_{ij} = \frac{1}{N} \quad \text{for } i \neq j,$
 - **nearest-neighbor coupling** on a ring:
-    $$
-    A_{ij} = 1 \quad \text{if } j = i \pm 1 \pmod{N}, \qquad
-    A_{ij} = 0 \quad \text{otherwise.}
-    $$
+
+$$
+A_{ij} = 1 \quad \text{if } j = i \pm 1 \pmod{N}, \qquad
+A_{ij} = 0 \quad \text{otherwise.}
+$$
+
 - **weighted or random coupling**, if desired.
 
 A simple all-to-all version is often the most convenient in toy modeling.
