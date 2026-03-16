@@ -160,7 +160,7 @@ The noise is not meant to be literal thermal noise. Instead, it is a reduced rep
 
 For implementation, it is often convenient to rewrite the system as first-order equations by introducing angular velocities:
 
-$\omega_i = \dot{\theta}_i.$\]
+$\omega_i = \dot{\theta}_i.$
 
 Then the system becomes
 
@@ -224,7 +224,7 @@ This can help detect rapid collective reorganizations.
 
 ### 9.3 Polarity sign
 
-$P(t) = \operatorname{sgn}(M(t)).$
+$P(t) = sgn \left( M(t) \right).$
 
 This is useful for reversal detection.
 
@@ -234,16 +234,14 @@ This is useful for reversal detection.
 
 A practical reversal can be defined as a persistent sign change in \(M(t)\):
 
-\[
-M(t^-)\,M(t^+) < 0,
-\]
+$M(t^-)\,M(t^+) < 0,$
 
 with an additional persistence condition to avoid counting short-lived fluctuations.
 
 For example, one may count a reversal only if:
 
-1. \(M(t)\) crosses zero,
-2. the new sign persists for at least a threshold time \(\tau_{\min}\),
+1. $M(t)$ crosses zero,
+2. the new sign persists for at least a threshold time $\tau_{\min}$,
 3. the dipole amplitude recovers to a substantial absolute value after the crossing.
 
 This distinction helps separate:
@@ -258,27 +256,11 @@ This distinction helps separate:
 
 Although the stochastic system is dissipative and driven, one can still define a formal energy-like quantity in the deterministic limit:
 
-\[
-E
-=
-\sum_{i=1}^{N}
-\left[
-\frac{1}{2}\omega_i^2 + V(\theta_i)
-\right]
--\frac{\lambda}{2}\sum_{i,j=1}^{N} A_{ij}\cos(\theta_i-\theta_j).
-\]
+$$E = \sum_{i=1}^{N} \left[ \frac{1}{2}\omega_i^2 + V(\theta_i) \right] -\frac{\lambda}{2}\sum_{i,j=1}^{N} A_{ij}\cos(\theta_i-\theta_j).$$
 
-With \(V(\theta_i) = -\alpha \cos^2\theta_i\), this becomes
+With $V(\theta_i) = -\alpha \cos^2\theta_i$, this becomes
 
-\[
-E
-=
-\sum_{i=1}^{N}
-\left[
-\frac{1}{2}\omega_i^2 - \alpha \cos^2\theta_i
-\right]
--\frac{\lambda}{2}\sum_{i,j=1}^{N} A_{ij}\cos(\theta_i-\theta_j).
-\]
+$$E = \sum_{i=1}^{N} \left[ \frac{1}{2}\omega_i^2 - \alpha \cos^2\theta_i \right] -\frac{\lambda}{2}\sum_{i,j=1}^{N} A_{ij}\cos(\theta_i-\theta_j).$$
 
 ### Interpretation
 
@@ -286,7 +268,7 @@ E
 - the local potential favors axial alignment,
 - the coupling term favors mutual alignment.
 
-In the presence of damping and noise, \(E\) is not conserved, but it remains a useful conceptual guide.
+In the presence of damping and noise, $E$ is not conserved, but it remains a useful conceptual guide.
 
 ---
 
@@ -294,25 +276,25 @@ In the presence of damping and noise, \(E\) is not conserved, but it remains a u
 
 The most important control parameters are:
 
-### \(N\): number of interacting elements
+### $N$: number of interacting elements
 Controls the system size.
 
-### \(\alpha\): local axial preference
+### $\alpha$: local axial preference
 Determines how strongly each element prefers alignment with the dipole axis.
 
-### \(\gamma\): damping
+### $\gamma$: damping
 Controls relaxation of angular motion.
 
-### \(\lambda\): interaction strength
+### $\lambda$: interaction strength
 Controls how strongly elements align collectively.
 
-### \(\sigma\): noise amplitude
+### $\sigma$: noise amplitude
 Controls the strength of unresolved forcing.
 
-### \(A_{ij}\): network structure
+### $A_{ij}$: network structure
 Controls who interacts with whom.
 
-Together these parameters determine whether the system is:
+Together, these parameters determine whether the system is:
 
 - strongly ordered,
 - weakly ordered,
@@ -325,37 +307,27 @@ Together these parameters determine whether the system is:
 
 The model becomes especially interpretable in several limiting cases.
 
-### 13.1 No coupling: \(\lambda = 0\)
+### 13.1 No coupling: $\lambda = 0$
 
 Each element evolves independently:
 
-\[
-\ddot{\theta}_i + \gamma \dot{\theta}_i
-=
--\alpha \sin(2\theta_i)
-+ \sigma\,\eta_i(t).
-\]
+$$\ddot{\theta}_i + \gamma \dot{\theta}_i = -\alpha \sin(2\theta_i) + \sigma\,\eta_i(t).$$
 
 This reduces the model to many uncoupled bistable units.
 
-### 13.2 No noise: \(\sigma = 0\)
+### 13.2 No noise: $\sigma = 0$
 
 The evolution becomes deterministic:
 
-\[
-\ddot{\theta}_i + \gamma \dot{\theta}_i
-=
--\alpha \sin(2\theta_i)
-+ \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i).
-\]
+$$\ddot{\theta}_i + \gamma \dot{\theta}_i = -\alpha \sin(2\theta_i) + \lambda \sum_{j=1}^{N} A_{ij}\,\sin(\theta_j-\theta_i).$$
 
-This highlights purely interaction-driven organization.
+This highlights a purely interaction-driven organization.
 
-### 13.3 Strong coupling: \(\lambda \gg 1\)
+### 13.3 Strong coupling: $\lambda \gg 1$
 
 The units tend to synchronize strongly, producing long intervals of coherent polarity.
 
-### 13.4 Strong noise: \(\sigma \gg 1\)
+### 13.4 Strong noise: $\sigma \gg 1$
 
 The system becomes more disordered, and reversals or excursions become more frequent.
 
@@ -363,31 +335,15 @@ The system becomes more disordered, and reversals or excursions become more freq
 
 ## 14. Discrete-Time Numerical Approximation
 
-With time step \(\Delta t\), an Euler-Maruyama style discretization for the first-order system is:
+With time step $\Delta t$, an Euler-Maruyama style discretization for the first-order system is:
 
-\[
-\theta_i^{n+1} = \theta_i^n + \omega_i^n \Delta t,
-\]
+$$\theta_i^{n+1} = \theta_i^n + \omega_i^n \Delta t,$$
 
-\[
-\omega_i^{n+1}
-=
-\omega_i^n
-+
-\left[
--\gamma \omega_i^n
--\alpha \sin(2\theta_i^n)
-+ \lambda \sum_{j=1}^{N} A_{ij}\sin(\theta_j^n-\theta_i^n)
-\right]\Delta t
-+
-\sigma \sqrt{\Delta t}\,\xi_i^n,
-\]
+$$\omega_i^{n+1} = \omega_i^n + \left[ -\gamma \omega_i^n -\alpha \sin(2\theta_i^n) + \lambda \sum_{j=1}^{N} A_{ij}\sin(\theta_j^n-\theta_i^n) \right] \Delta t + \sigma \sqrt{\Delta t}\,\xi_i^n,$$
 
 where
 
-\[
-\xi_i^n \sim \mathcal{N}(0,1)
-\]
+$$\xi_i^n \sim \mathcal{N}(0,1)$$
 
 are independent standard Gaussian random variables.
 
@@ -425,13 +381,13 @@ This is only a suggested structure, not a recovered one, because the currently v
 
 A corresponding `analysis.py` would naturally compute:
 
-- \(M(t)\): dipole proxy,
-- \(P(t)=\operatorname{sgn}(M)\): polarity,
+- $M(t)$: dipole proxy,
+- $P(t) = sgn \left( M \right)$: polarity,
 - reversal count,
 - waiting-time distribution,
-- coherence \(R(t)\),
-- power spectrum of \(M(t)\),
-- probability density of \(M\),
+- coherence $R(t)$,
+- power spectrum of $M(t)$,
+- probability density of $M$,
 - excursion statistics.
 
 Again, this is a scientifically consistent recommendation, not a reconstruction of non-empty code. The raw public `analysis.py` view appeared empty when checked. citeturn951554view2
